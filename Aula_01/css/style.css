@@ -1,0 +1,120 @@
+/*Comentários crtl + 
+ Aula 01 - Css para página de Boas Vindas
+ Metodologia: MOBILE- FIRST (começaremos com telas menores)
+ - Estilos base são otimizados para CELULARES (viewport pequeno)
+ - Telas maiores recebem ajustes via Media Queries (responsividade, tamanho das telas, pequeno medio e grande/celular 425px, tablet 768px, pc 1024px)
+ -Garante boas experiências em qualquer dispositivos
+    Estruturas do Css:
+        Estilos Globais (body, fontes)
+        Estilos do Header (cabeçalho)
+        Estilos da Main (conteúdo principal)
+        Estilos dos elementos (img,p,buttons)
+        Media Queries para desktop (ao final)
+ */
+
+
+/* Estilos Globais (Base Mobile) */
+/* Pega toda a página , retira o css padrão do navegador:*/
+* {
+   margin: 0;
+   padding: 0;
+}
+
+
+body {
+   /* Define a família de fontes padrão para toda a página */
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #f4f4f4;
+   /*Define a cor de fundo*/
+   color: #333;
+   /*Cor padrão dos nossos textos*/
+   margin: 0;
+   /*Espaçamento externo do elemento*/
+   padding: 0;
+   /*Espaçamento interno do elemento*/
+   text-align: center;
+   /*Alinha todo o texto no centro*/
+}
+
+header {
+   background-color: #2c3e50;
+   /*Cor de fundo*/
+   color: #fff;
+   /*cor do texto*/
+   padding: 30px 15px;
+   /*Espaçamento interno*/
+}
+
+h1 {
+   font-size: 1.8rem;
+   /*Tamanho de fonte que independe do tamanho da tela, uma fonte fixa (1.8re, = 28.8px)*/
+   font-weight: 700;
+   /*Peso da fonte*/
+}
+
+/*Estilo da Main (conteúdo principal)*/
+main {
+   padding: 30px 15px;
+   /*Espaçamento interno do elemento*/
+}
+
+/*Estilo dos Elementos*/
+/*Estilo de imagem*/
+img {
+   width: 100%; /*para imagem ocupar 100% do espaço de largura*/
+   max-width: 300px; /*O tamanho maximo da nossa imagem*/
+   border-radius: 10px; /*Arredondar as bordas da imagem*/
+   /*border: 1px solid black; Colocaria uma borda preta ao redor*/
+   margin-bottom: 20px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*Propriedade de sombreamento*/
+}
+
+/*Estilo de parágrafo*/
+p{
+   font-size: 1rem; /*tamanho de fonte que nao vai ser alterado*/
+   margin-bottom: 30px; /*espaçamento abaixo do parágrafo*/
+   line-height: 1.5; /*Espaçamento entre linhas para ocupar toda a largura*/
+}
+
+/*Estilo do Botão*/
+.button{
+   display: block; /*Display block faz o link ocupar toda a largura disponivel*/
+   background-color: #e67e22; /*Cor de fundo*/
+   color: #fff; /*Cor de texto*/
+   padding: 15px; /*Espaçamento interno*/
+   text-decoration: none; /*Para tirar a decoração dos links*/
+   border-radius: 5px; /*Borda arredondada*/
+   font-weight: bold; /*Peso da fonte*/
+   transition: background-color 0.3s ease; /*transição suave da cor de fundo em 0.3s*/
+}
+
+footer{
+   background-color: #2c3e50; /*cor de fundo*/
+   color: #bdc3c7; /*cor do texto*/
+   padding: 15px 0; /*Espaçamento interno*/
+   width: 100%; /*Largura de 100%*/
+}
+
+/*Media Query: Telas maiores (Desktop)*/
+
+@media (min-width: 768px) {
+   h1 {
+      font-size: 2.5rem; /*tamanho da fonte maior*/
+   }
+
+   p{
+      font-size: 1.2rem; /**/
+      max-width: 600px; /*Maximo de largura*/
+      margin: 0 auto 30px; /*Ajustando o espaçamento externo*/
+   }
+
+   .button {
+      display: inline-block; /*Botao volta a ser pequeno para o desktop*/
+      padding: 15px 40px; /*Espaçamento interno*/
+   }
+
+   footer {
+      position: fixed; /*Posicionamento do elemento fixado*/
+      bottom: 0; /*Espaçamento embaixo do elemento*/
+   }
+}
