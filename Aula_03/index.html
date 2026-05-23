@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<!--usando o flexbox de forma avançcada-->
+
+
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Receita e Flexbox</title>
+    <link  rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <!--Container Principal-->
+        <!--Div Wrapper que centraliza todo o conteudo da receita-->
+        <div class="recipe-container">
+
+            <!--Título principal-->
+            <h1>Bolo de Cenoura com Chocolate</h1>
+
+            <!--Seção de ingredientes-->
+            <!--Tag Semântica <section> agrupa conteúdos tématicos relacionado-->
+            <section class="ingredients">
+
+                <!-- Subtitulo da seção -->
+                <h2>Ingredientes</h2>
+
+                <!-- Lista flexivel de ingredientes
+                 Utiliza CSS flexbox para mudar de layout conforme o tamanho da tela:
+                 -Mobile : os itens em coluna
+                 desktop: os itens em linha
+                 Ul: cria listas não ordenadas
+                 (também existe as ordenadas)
+                 -->
+
+                 <!-- ul- cria listas não ordenadas -->
+                <ul class="flex-list">
+                    <!-- Li - cria o item da lista -->
+                    <li>3 Cenouras médias</li>
+                    <li>3 Ovos</li>
+                    <li>3 Xícaras de Óleo</li>
+                    <li>2 Xícaras de Açúcar</li>
+                    <li>2 Xícaras de Farinha</li>
+                    <li>1 colher de Fermento</li>
+                </ul>
+                
+                <!-- Seção de Informações Nutricionais -->
+                 <!-- Seção semântica para dados tabulares -->
+                <section class="info">
+                    <!-- Subtitulo -->
+                    <h2>Informações Nutricionais</h2>
+                     <!--Tabela Responsiva feita no CSS depois  -->
+                     <!-- Tabela que exibe os nutrientes e quantidades
+                      No Css, aplica scroll horizontal em mobile se necessário-->
+
+
+                      <!-- Tabela: usada para organnizar dados em linhas e colunas -->
+                    <table>
+                        <!-- Thead : representa o cabebeça~ho da tabela -->
+                        <thead>
+
+                            <!-- Tr (table row): cria uma linha -->
+                             <tr>
+                                <!-- Th(table header): célula de título (fica em negrito por padrão) -->
+                                <th>Nutriente</th>
+                                <th>Quantidade</th>
+                             </tr>
+
+                        </thead>
+                        <!-- Tbody : representa o corpo da tabela (onde ficam os dados) -->
+                        <tbody>
+                            <!-- Primeira Linha -->
+                            <tr>
+                                <!-- Td( table data) : célula de contéudo -->
+                                <td>Calorias</td>
+                                <td>320 kcal</td>    
+                            </tr>
+                            <!-- Segunda Linha -->
+                            <tr>
+                                <td>Açúcares</td>
+                                <td>25g</td>
+                            </tr>
+                            <!-- Terceira Linha -->
+                            <tr>
+                                <td>Gorduras</td>
+                                <td>12g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </div>
+    </body>
+</html>

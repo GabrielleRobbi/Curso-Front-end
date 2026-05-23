@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--Aula 02 - Cartão de Produto
+Objetivo: Criar um cartão de Produto Responsivo usando Css, Flexbox e estilos avançados-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Cartão de Produto</title>
+    <link rel="stylesheet" href="Css/css/style.css">
+</head>
+    <body>
+        <!--Area do nosso conteudo principal-->    
+        <main>
+            <!--Chamar as classes com nomes mais associados. 
+                CONTAINER PRINCIPAL Div wrapper usada para centralizar o cartão na pagina
+                o Css (display: Flex) vai centralizar este elemento-->
+            <div class="container"> 
+
+                <!--Cartão de produto (Product Card):
+                Estrutura que contém : imagem, título, descrição, preço e botão de compra. 
+                Este é um padrão comum em e-comerce-->
+                <div class="product-card">
+                    <!--Imagem do Produto:
+                    Src: Url da Imagem
+                    alt: Texto alternativo(Importante para acessibilidade)-->
+                    <img src="img/img/caderno-produto.webp" alt="Produto"> 
+                    <!--Contéudo Interno do cartão-->
+                    <div class="card-content">
+                        <!--Título do produto-->
+                        <h3>Caderno Espiral Capa Dura</h3>
+                        <P>O Caderno Espiral 1/4 possui capa dura, folhas pautadas e espiral colorido. Ideal para o dia a dia.Formato: 140mm x 200mm
+                        Gramatura: 56 g/m²
+                        Número de folhas: 96 folhas
+                        </P>
+
+                        <!--Preço do Produto (com classe especial para estilização)-->
+                        <span class="price">R$ 24,90</span>
+                        <a href="#" class="buy-btn">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </main>   
+    </body>
+</html>

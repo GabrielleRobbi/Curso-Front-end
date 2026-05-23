@@ -1,0 +1,68 @@
+/*Aula 03 - CSS para pagína de receita
+ Tópicos principais:
+ 
+ 1- Estilos Globais
+ 2- Container de receita
+ 3- Títulos e seções
+ 4- Listas Fléxiveis
+ 5- Tabelas Responsivas
+ 6- Media Query
+
+
+*/
+
+
+/*Estilos Globais*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfcf0 ;
+    padding: 15px;
+    color: #4a3728;
+}
+
+/*Container de Receita*/
+.recipe-container{
+    background: #ffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/*Títulos e Seções*/
+
+h1{
+    text-align: center; /*Título centralizado*/
+    color: #d35400;
+    font-size: 1.5rem;
+}
+
+/*Lista Flexíveis*/
+
+.flex-list{
+    display: flex; /*Ativa o modelo flexbox para esse elemento*/
+    flex-direction: column; /*Alinha a direção dos itens (coluna) */
+    gap: 10px; /*Espaçamento entre itens*/
+    list-style: none; /*Estilização da lista, removendo o marcador da lista*/
+}
+
+/*Estilo de cada item da lista*/
+.flex-list li{
+    background: #fff3e0;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/*Seções */
+
+.info{
+    overflow-x: auto; /*Permite um scroll automatico da tela para o lado*/
+}
+
