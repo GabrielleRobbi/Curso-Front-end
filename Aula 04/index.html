@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Aula 04 - Formulários de Inscrição -->
+<!-- Objetivo: Criar um formulario responsivo e bem
+  estruturado usando  HTML semântico -->
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 - Formulário de Inscrição</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Wrapper do formulário -->
+     <!-- Div Container que centraliza e estiliza o formulario -->
+    <div class="form-wrapper">
+
+        <!-- Formulário Principal -->
+        <!-- Tag Semântica <form> indica que é um formulario 
+            Atributos utilizados
+            -method: como enviar os dados (GET ou Post)
+            -action: para enviar os dados-->
+        <form class="evnt-form">
+
+            <h2>Inscrição Tech Summit</h2>
+            <!-- Título do Formulario -->
+
+
+            <!-- Grupo de Formulario - Grupo Nome 01-->
+                 <!-- Cada input é envolvido em uma div (form-group) 
+                  para melhor organização-->
+            <div class="form-group">
+
+                <!-- Label (Rótulo) -->
+                 <!-- Importante para acessibilidade o atributo (for)
+                  conectar ao id do input, porque quando o usario clica no
+                  label, o input recebe o foco. -->
+                <label for="nome">Nome Completo</label>
+
+                <!-- Existem vários Types -->
+                 <!-- Input type text (campo de texto) 
+                  - id: identificador único (conecta ele com a label)
+                  - type: tipo de entrada de dados (texto = texto simples)
+                  - placeholder: um texto de sugestão (desaparece ao digitar)
+                  -required: campo obrigatorio (não permite enviar o formulario com o campo vazio)
+                  -->
+                <input type="text" id="nome" placeholder="nome completo" required >
+            </div>
+            
+            <!-- Grupo de Email 02-->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="seuemail@email.com" required>
+            </div>
+
+            <!-- Grupo Select 03 (seleção)-->
+             <div class="form-group">
+                <label for="area">Área de Interesse</label>
+
+                <!-- Permite que o usuario escolha uma unica opcao de uma lista
+                 pré-selecionada -->
+                <select id="area">
+                    <!-- Opções do dropdown  -->
+                     <!-- Value: valor enviado no formulario (não é o que o usuario vê) -->
+                    <option value="">Selecione uma opção</option>
+                    <option value="frontend">Front-end</option>
+                    <option value="backend">Back-end</option>
+                    <option value="design">Design</option>
+                </select>
+                </div>
+
+
+                <!-- Grupo de Textarea (texto longos) 04 -->
+                <div class="form-group">
+                    <label for="msg">Por que quer participar?</label>
+                    <!-- Textarea: Permite entrada de texto em multiplas linhas
+                     atributo rows define a altura da linha inicia (4 linhas) -->
+                    <textarea id="msg" rows="4" ></textarea>
+                </div>
+
+                <!-- Botão de enviar -->
+                 <!-- type:"submit" faz com que o formulario seja enviado ao clicar
+                  o evento envio pode ser capturado com JavaScript para validação adicional
+                  -->
+                <button type="submit">Enviar Inscrição</button>
+             </div>
+        </form>
+    </div>
+</body>
+</html>
