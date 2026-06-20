@@ -18,6 +18,9 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main-header{
@@ -47,8 +50,95 @@ nav a{
     font-size: 0.9rem;
 }
 
+.layout-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+    flex: 1;
+}
+
 .post img{
     width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 
+
+.content, .sidebar{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-footer{
+    text-align: center;
+    padding: 30px;
+    background-color: #1a1a1a;
+    color: #888;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+/* Modificacoes que eu fiz*/
+/* Div principal layout-wrapper */
+/* Content */
+h1{
+    /* Alinha o texto no centro */
+    text-align: center;
+    /* Ajusta o tamanho da fonte (para nao ficar tao grande) */
+    font-size: 1.5rem;
+    /* Da um espaçamento inferior */
+    margin-bottom: 10px;
+}
+
+p{
+    margin: 15px 0 ;
+}
+
+/* Modificacoes que eu fiz*/
+/* Div principal layout-wrapper */
+/* Modificando a div interna, sidebar-list*/
+.sidebar-list{
+    margin: 10px;
+}
+
+/* Modificando o marcador (propriedade marker) */
+.sidebar li::marker{
+    /* mudar o conteudo para estrela ao inves de ponto */
+    content:  "★ " ;
+    /* Da para mudar a cor tambem do marcador */
+    color: hotpink;
+}
+/* Modificando o link (a) */
+a{
+    /* Deixa a fonte da mesma cor que todo mundo */
+    color: inherit;
+}
+
+@media (min-width: 992px) {
+    .main-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 100px;
+        text-align: left;
+    }
+    .layout-wrapper{
+        flex-direction: row;
+        margin: 40px auto;
+        max-width: 1100px;
+    }
+
+    /* Content ocupa 75% do espaço com (flex:3) */
+    .content{
+        /* Flex: 3; se o sidebar flex:1, 
+        o content será 3x maior proporção 3:1 = 75% : 25% */
+        flex: 3;
+    }
+
+    .sidebar{
+        flex: 1;
+    }
 }
 
