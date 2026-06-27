@@ -1,0 +1,124 @@
+/* Aula 06 - Css para galeria responsiva
+Tópicos:
+-Grid responsavel com flex box
+-Overlay com posicao absoluta
+-object-fit para imagens
+-animações apenas para descktop
+-multiplas media queries */
+
+/* Estilos Globais */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: #121212;
+    color: white;
+    padding: 30px 15px;
+}
+
+/* Título da Galeria */
+h1{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Grid da Galeria (Grade) */
+.grid{
+    /* Flexbox: Criar um grid com flex-wrap
+    Este é um padrão para criar cgrids responsiveis sem Css Grid */
+    /* flex-wrap: wrap quebra a linha quando os itens não cabem; */
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Itens da Galeria */
+.item{
+    /* Position: relative  cria um contexto de posicionamento para o overlay
+    ser posicionado em relação a este elemento e não a viewport*/
+    /* Overflow: hidden impede que as imagens/overlays vazem para fora das bordas */
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.item img{
+    /* Object-fit: cover faz a imagme preencher o espaço sem distorcer, e caso necessario
+    ele corta a imagme nas laterais */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay (camada de texto sob a imagem) */
+.orveley{
+    /* Positio: relative posiciona o overlay SOB a imagem (no top da pilha de elementos) 
+    A posição é relativa ao item (o avô display flex, o filho position:relative, e agora o neto 
+    position:absolute */
+    /* Background criou uma camada transparente */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+
+    /* Outros ajustes feitos para apenas essa div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Media Query: Tablet (+600px) */
+@media (min-width: 600px) {
+    /* Cacl(50% - 15px) 
+    - 50% da largura do grid (div que envolve os itens/ o item ocupa 50% dessa div)
+    - menos 15px (metade do gap de 30px que ele tem na forma original) 
+    para não exceder a largura
+    - resultado: 2 colunas com espaço entre elas */
+    .item{
+     width: calc(50% - 15px);   
+    }   
+}
+
+/* Media Query: Desktop (+1024px) */
+@media (min-width: 1024px) {
+    body{
+        padding: 50px;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    .item{
+        width: calc(33.333% - 15px);
+    }
+    /* Efeito Hover na imagem: zoom de 10%
+    precisa de transition, transform e hover */
+    .item img{
+        /* Define a transição 0.5segundos para a propriedade transform */
+        transition: transform 0.5s ease;
+    }
+    .item:hover img{
+        transform: scale(1.1);
+    }
+    /* Efeito começa invisível (opacity: 0), depois faz a transicao suave (transition: opacity)
+    e depois a transparência mais escura (background: rgba), para ativar usa-se o item:hover .orverley
+    ou seja, ativa o modo passar o mouse por cima para utilizar o efeito */
+    .orveley{
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .item:hover .orveley{
+        opacity: 1;
+    }
+}
